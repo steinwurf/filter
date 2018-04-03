@@ -10,12 +10,12 @@
 #include <cassert>
 #include <limits>
 
-namespace score
+namespace filter
 {
 /// Implements a simple Kalman filter variatn that can be used to estimate
 /// a value based on some samples
 template<typename EstimateType, typename GainType = float>
-class kalman_filter
+class kalman
 {
 
 public:
@@ -23,7 +23,7 @@ public:
     /// constructor
     /// @param gain the initial Kalman gain
     /// @param initial_estimate the initial estimation value
-    kalman_filter(GainType gain, EstimateType initial_estimate = 0) :
+    kalman(GainType gain, EstimateType initial_estimate = 0) :
         m_estimate(initial_estimate)
     {
         set_gain(gain);

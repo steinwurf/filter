@@ -7,9 +7,9 @@
 
 #include <gtest/gtest.h>
 
-TEST(test_kalman_filter, float)
+TEST(test_kalman, float)
 {
-    score::kalman_filter<float> estimator(.2f);
+    filter::kalman<float> estimator(.2f);
 
     std::vector<float> samples = {1.f, 1.f, 0.f};
     std::vector<float> estimates = {.2f, .36f, .288f};
@@ -23,9 +23,9 @@ TEST(test_kalman_filter, float)
     }
 }
 
-TEST(test_kalman_filter, int)
+TEST(test_kalman, int)
 {
-    score::kalman_filter<int16_t> estimator(0.5);
+    filter::kalman<int16_t> estimator(0.5);
 
     std::vector<int16_t> samples = {1, 1, 100,100, 0};
     std::vector<int16_t> estimates = {0, 0, 50, 75, 37};
@@ -39,9 +39,9 @@ TEST(test_kalman_filter, int)
     }
 }
 
-TEST(test_kalman_filter, min_max)
+TEST(test_kalman, min_max)
 {
-    score::kalman_filter<int16_t> estimator(1);
+    filter::kalman<int16_t> estimator(1);
 
     estimator.set_min_estimate(0);
     estimator.set_max_estimate(10);
@@ -61,7 +61,7 @@ TEST(test_kalman_filter, min_max)
 
 TEST(test_kalman_filter, getters_and_setters)
 {
-    score::kalman_filter<int16_t> estimator(1);
+    filter::kalman<int16_t> estimator(1);
 
     {
         int16_t min_estimate = 1;
