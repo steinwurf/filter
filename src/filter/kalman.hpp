@@ -18,6 +18,9 @@ template<typename EstimateType, typename GainType = float>
 class kalman
 {
 
+    static_assert(std::is_floating_point<GainType>::value,
+                  "Gain type must be floating point type");
+
 public:
 
     /// constructor

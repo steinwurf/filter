@@ -67,18 +67,15 @@ TEST(test_kalman_filter, getters_and_setters)
         int16_t min_estimate = 1;
         estimator.set_min_estimate(min_estimate);
         EXPECT_EQ(min_estimate, estimator.min_estimate());
-
     }
     {
         int16_t max_estimate = 2;
         estimator.set_max_estimate(max_estimate);
         EXPECT_EQ(max_estimate, estimator.max_estimate());
-
     }
     {
         float gain = 0.7f;
         estimator.set_gain(gain);
         EXPECT_EQ(gain, estimator.gain());
-
     }
 }
