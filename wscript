@@ -2,7 +2,7 @@
 # encoding: utf-8
 
 APPNAME = 'filter'
-VERSION = '1.0.0'
+VERSION = '1.1.0'
 
 
 def build(bld):
